@@ -18,9 +18,11 @@ public class PartyCodeMapperTest {
         expectedMappings.put("NCP", "Nationalist Congress Party");
         expectedMappings.put("IND", "Independant");
 
+
         //Act
-        PartCodeMapper partCodeMapper = new PartCodeMapper(expectedMappings);
-        Map<String, String> actualMappings = partCodeMapper.getMappings();
+        PartCodeMapper partyCodeMapper = new PartCodeMapper();
+        partyCodeMapper.doMapping();
+        Map<String, String> actualMappings = partyCodeMapper.getMappings();
 
         //Assert
         Assertions.assertEquals(expectedMappings, actualMappings);
