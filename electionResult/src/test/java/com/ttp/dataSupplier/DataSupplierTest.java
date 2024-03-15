@@ -7,17 +7,15 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DataSupplierTest
-{
+public class DataSupplierTest {
     @Test
-    void shouldAbleToGetDataFromDataSupplier()
-    {
+    void shouldAbleToGetDataFromDataSupplier() {
         //Arrange
-        Map<String , Map<String ,Integer>> expectedResult = new HashMap<>();
+        Map<String, Map<String, Integer>> expectedResult = new HashMap<>();
         Map<String, Integer> bangloreResult = new HashMap<>();
         bangloreResult.put("INC", 11014);
         bangloreResult.put("BJP", 17803);
-        bangloreResult.put("CPI",4923);
+        bangloreResult.put("CPI", 4923);
         bangloreResult.put("NCP", 2069);
         expectedResult.put("Banglore", bangloreResult);
 
@@ -26,6 +24,6 @@ public class DataSupplierTest
         Map<String, Map<String, Integer>> actualResult = dataSupplier.getResult();
 
         //Asert
-        Assertions.assertEquals(expectedResult,actualResult);
+        Assertions.assertEquals(expectedResult, actualResult);
     }
 }
