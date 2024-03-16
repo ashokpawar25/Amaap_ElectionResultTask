@@ -27,4 +27,11 @@ public class PartyCodeMapperTest {
         //Assert
         Assertions.assertEquals(expectedMappings, actualMappings);
     }
+
+
+//    @Test
+//    void shouldAbleToGetFullNameOfPartyForShortForm()
+//    {
+//
+//    }
 }
