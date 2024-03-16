@@ -29,9 +29,17 @@ public class PartyCodeMapperTest {
     }
 
 
-//    @Test
-//    void shouldAbleToGetFullNameOfPartyForShortForm()
-//    {
-//
-//    }
+    @Test
+    void shouldAbleToTranslatePartyCodeInFullName() {
+        PartCodeMapper partCodeMapper = new PartCodeMapper();
+        partCodeMapper.doMapping();
+
+        //Assert
+        Assertions.assertEquals("Bhartiya Janta Party", partCodeMapper.translatePartyCodeInFullName("BJP"));
+        Assertions.assertEquals("Indian National Congress", partCodeMapper.translatePartyCodeInFullName("INC"));
+        Assertions.assertEquals("Bahujan Samaj Party", partCodeMapper.translatePartyCodeInFullName("BSP"));
+        Assertions.assertEquals("Communist Party of India", partCodeMapper.translatePartyCodeInFullName("CPI"));
+        Assertions.assertEquals("Nationalist Congress Party", partCodeMapper.translatePartyCodeInFullName("NCP"));
+        Assertions.assertEquals("Independant", partCodeMapper.translatePartyCodeInFullName("IND"));
+    }
 }

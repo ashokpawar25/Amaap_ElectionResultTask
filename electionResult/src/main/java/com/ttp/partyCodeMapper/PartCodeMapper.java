@@ -19,4 +19,14 @@ public class PartCodeMapper {
     {
         return this.mappings;
     }
+
+    public String translatePartyCodeInFullName(String partyCode)
+    {
+        for (Map.Entry<String, String> party:mappings.entrySet())
+        {
+            if(party.getKey().equalsIgnoreCase(partyCode))
+                return party.getValue();
+        }
+        return null;
+    }
 }
