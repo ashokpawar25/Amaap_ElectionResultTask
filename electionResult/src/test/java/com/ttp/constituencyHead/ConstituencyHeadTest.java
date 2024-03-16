@@ -27,12 +27,14 @@ public class ConstituencyHeadTest {
 
         Map<String, Map<String, Integer>> expectedWinner = new HashMap<>();
         Map<String, Integer> winnerData = new HashMap<>();
-        winnerData.put("BJP", 17803);
+        winnerData.put("Bhartiya Janta Party", 17803);
         expectedWinner.put("Banglore", winnerData);
+        partCodeMapper.doMapping();
 
         //Act
         ConstituencyHead constituencyHead = new ConstituencyHead(partCodeMapper, dataSupplier);
         Map<String, Map<String, Integer>> actualWinner = constituencyHead.analyzeResult();
+
 
         //Assert
         Assertions.assertEquals(expectedWinner, actualWinner);
@@ -66,12 +68,13 @@ public class ConstituencyHeadTest {
 
         Map<String, Map<String, Integer>> expectedWinner = new HashMap<>();
         Map<String, Integer> bangloreWinnerData = new HashMap<>();
-        bangloreWinnerData.put("BJP", 17803);
+        bangloreWinnerData.put("Bhartiya Janta Party", 17803);
         expectedWinner.put("Banglore", bangloreWinnerData);
 
         Map<String, Integer> puneWinnerData = new HashMap<>();
-        puneWinnerData.put("INC", 9389);
+        puneWinnerData.put("Indian National Congress", 9389);
         expectedWinner.put("Pune", puneWinnerData);
+        partCodeMapper.doMapping();
 
         //Act
         ConstituencyHead constituencyHead = new ConstituencyHead(partCodeMapper, dataSupplier);

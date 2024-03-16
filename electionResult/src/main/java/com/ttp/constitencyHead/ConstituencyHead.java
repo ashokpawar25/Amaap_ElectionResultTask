@@ -19,7 +19,7 @@ public class ConstituencyHead {
     {
         Map<String, Map<String, Integer>> result = dataSupplier.getResult();
         Map<String, Map<String, Integer>> constituncyWinner = new HashMap<>();
-//        <Banglore, <INC, 11014>,<BJP, 17803>,<CPI, 4923>,<NCP, 2069>>
+
         for(Map.Entry<String, Map<String, Integer>> constituency:result.entrySet()) {
             Map<String, Integer> winningPartyData = new HashMap<>();
             int winnerPartyVotes = 0;
@@ -31,7 +31,8 @@ public class ConstituencyHead {
                     winningPartyName= entry.getKey();
                 }
             }
-            winningPartyData.put(winningPartyName, winnerPartyVotes);
+            String winningPartyFullName = partCodeMapper.translatePartyCodeInFullName(winningPartyName);
+            winningPartyData.put(winningPartyFullName, winnerPartyVotes);
             constituncyWinner.put( constituency.getKey(), winningPartyData);
         }
         return constituncyWinner;
